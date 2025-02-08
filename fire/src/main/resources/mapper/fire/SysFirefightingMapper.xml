@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.degson.fire.mapper.SysFirefightingMapper">
+
+    <resultMap type="SysFirefighting" id="SysFirefightingResult">
+        <result property="fireId"    column="fire_id"    />
+        <result property="deviceName"    column="device_name"    />
+        <result property="deviceModel"    column="device_model"    />
+        <result property="locate"    column="locate"    />
+        <result property="productDate"    column="product_date"    />
+        <result property="installTime"    column="install_time"    />
+        <result property="expiryDate"    column="expiry_date"    />
+        <result property="status"    column="status"    />
+        <result property="pointCheck"    column="point_check"    />
+        <result property="image"    column="image"    />
+        <result property="qrContent"    column="qr_content"    />
+        <result property="killFireId"    column="kill_fire_id"    />
+        <result property="fireHydrantId"    column="fire_hydrant_id"    />
+        <result property="pumpRoomId"    column="pump_room_id"    />
+        <result property="groupRoomId"    column="group_room_id"    />
+        <result property="deviceGroup"    column="device_group"    />
+        <result property="checkRecords"    column="check_records"    />
+        <result property="maintainRecords"    column="maintain_records"    />
+        <result property="alarmData"    column="alarm_data"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectSysFirefightingVo">
+        select fire_id, device_name, device_model, locate, product_date, install_time, expiry_date, status, point_check, image, qr_content,kill_fire_id, fire_hydrant_id, pump_room_id, group_room_id, device_group, check_records, maintain_records, alarm_data, create_by, create_time, update_by, update_time from sys_firefighting
+    </sql>
+
+    <select id="selectSysFirefightingList" parameterType="SysFirefighting" resultMap="SysFirefightingResult">
+        <include refid="selectSysFirefightingVo"/>
+        <where>
+            <if test="deviceName != null  and deviceName != ''"> and device_name like concat('%', #{deviceName}, '%')</if>
+            <if test="deviceModel != null  and deviceModel != ''"> and device_model = #{deviceModel}</if>
+            <if test="locate != null  and locate != ''"> and locate = #{locate}</if>
+            <if test="productDate != null "> and product_date = #{productDate}</if>
+            <if test="installTime != null "> and install_time = #{installTime}</if>
+            <if test="expiryDate != null "> and expiry_date = #{expiryDate}</if>
+            <if test="status != null  and status != ''"> and status = #{status}</if>
+            <if test="pointCheck != null  and pointCheck != ''"> and point_check = #{pointCheck}</if>
+            <if test="image != null  and image != ''"> and image = #{image}</if>
+            <if test="qrContent != null  and qrContent != ''"> and qr_content = #{qrContent}</if>
+            <if test="killFireId != null "> and kill_fire_id = #{killFireId}</if>
+            <if test="fireHydrantId != null "> and fire_hydrant_id = #{fireHydrantId}</if>
+            <if test="pumpRoomId != null "> and pump_room_id = #{pumpRoomId}</if>
+            <if test="groupRoomId != null "> and group_room_id = #{groupRoomId}</if>
+            <if test="deviceGroup != null  and deviceGroup != ''"> and device_group = #{deviceGroup}</if>
+            <if test="checkRecords != null  and checkRecords != ''"> and check_records = #{checkRecords}</if>
+            <if test="maintainRecords != null  and maintainRecords != ''"> and maintain_records = #{maintainRecords}</if>
+            <if test="alarmData != null  and alarmData != ''"> and alarm_data = #{alarmData}</if>
+        </where>
+    </select>
+
+    <select id="selectSysFirefightingByFireId" parameterType="Long" resultMap="SysFirefightingResult">
+        <include refid="selectSysFirefightingVo"/>
+        where fire_id = #{fireId}
+    </select>
+
+    <insert id="insertSysFirefighting" parameterType="SysFirefighting" useGeneratedKeys="true" keyProperty="fireId">
+        insert into sys_firefighting
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="deviceName != null">device_name,</if>
+            <if test="deviceModel != null">device_model,</if>
+            <if test="locate != null">locate,</if>
+            <if test="productDate != null">product_date,</if>
+            <if test="installTime != null">install_time,</if>
+            <if test="expiryDate != null">expiry_date,</if>
+            <if test="status != null">status,</if>
+            <if test="pointCheck != null">point_check,</if>
+            <if test="image != null">image,</if>
+            <if test="qrContent != null">qr_content,</if>
+            <if test="killFireId != null">kill_fire_id,</if>
+            <if test="fireHydrantId != null">fire_hydrant_id,</if>
+            <if test="pumpRoomId != null">pump_room_id,</if>
+            <if test="groupRoomId != null">group_room_id,</if>
+            <if test="deviceGroup != null">device_group,</if>
+            <if test="checkRecords != null">check_records,</if>
+            <if test="maintainRecords != null">maintain_records,</if>
+            <if test="alarmData != null">alarm_data,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="deviceName != null">#{deviceName},</if>
+            <if test="deviceModel != null">#{deviceModel},</if>
+            <if test="locate != null">#{locate},</if>
+            <if test="productDate != null">#{productDate},</if>
+            <if test="installTime != null">#{installTime},</if>
+            <if test="expiryDate != null">#{expiryDate},</if>
+            <if test="status != null">#{status},</if>
+            <if test="pointCheck != null">#{pointCheck},</if>
+            <if test="image != null">#{image},</if>
+            <if test="qrContent != null">#{qrContent},</if>
+            <if test="killFireId != null">#{killFireId},</if>
+            <if test="fireHydrantId != null">#{fireHydrantId},</if>
+            <if test="pumpRoomId != null">#{pumpRoomId},</if>
+            <if test="groupRoomId != null">#{groupRoomId},</if>
+            <if test="deviceGroup != null">#{deviceGroup},</if>
+            <if test="checkRecords != null">#{checkRecords},</if>
+            <if test="maintainRecords != null">#{maintainRecords},</if>
+            <if test="alarmData != null">#{alarmData},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateSysFirefighting" parameterType="SysFirefighting">
+        update sys_firefighting
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="deviceName != null">device_name = #{deviceName},</if>
+            <if test="deviceModel != null">device_model = #{deviceModel},</if>
+            <if test="locate != null">locate = #{locate},</if>
+            <if test="productDate != null">product_date = #{productDate},</if>
+            <if test="installTime != null">install_time = #{installTime},</if>
+            <if test="expiryDate != null">expiry_date = #{expiryDate},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="pointCheck != null">point_check = #{pointCheck},</if>
+            <if test="image != null">image = #{image},</if>
+            <if test="qrContent != null">qr_content = #{qrContent},</if>
+            <if test="killFireId != null">kill_fire_id = #{killFireId},</if>
+            <if test="fireHydrantId != null">fire_hydrant_id = #{fireHydrantId},</if>
+            <if test="pumpRoomId != null">pump_room_id = #{pumpRoomId},</if>
+            <if test="groupRoomId != null">group_room_id = #{groupRoomId},</if>
+            <if test="deviceGroup != null">device_group = #{deviceGroup},</if>
+            <if test="checkRecords != null">check_records = #{checkRecords},</if>
+            <if test="maintainRecords != null">maintain_records = #{maintainRecords},</if>
+            <if test="alarmData != null">alarm_data = #{alarmData},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where fire_id = #{fireId}
+    </update>
+
+    <delete id="deleteSysFirefightingByFireId" parameterType="Long">
+        delete from sys_firefighting where fire_id = #{fireId}
+    </delete>
+
+    <delete id="deleteSysFirefightingByFireIds" parameterType="String">
+        delete from sys_firefighting where fire_id in
+        <foreach item="fireId" collection="array" open="(" separator="," close=")">
+            #{fireId}
+        </foreach>
+    </delete>
+
+    <update id="uni" parameterType="String">
+        update sys_firefighting
+        set image = #{image},check_records = #{currentDateString}
+        where qr_content = #{qrContent}
+    </update>
+
+    <update id="updateSysFire" parameterType="SysFirefighting">
+        update sys_firefighting set point_check = #{pointCheck}
+        where fire_id = #{fireId}
+    </update>
+</mapper>

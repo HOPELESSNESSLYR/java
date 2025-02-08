@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.degson.fire.mapper.SysFirerecordMapper">
+    
+    <resultMap type="SysFirerecord" id="SysFirerecordResult">
+        <result property="recordId"    column="record_id"    />
+        <result property="fireId"    column="fire_id"    />
+        <result property="deviceName"    column="device_name"    />
+        <result property="deviceModel"    column="device_model"    />
+        <result property="locate"    column="locate"    />
+        <result property="pointCheck"    column="point_check"    />
+        <result property="checkRecords"    column="check_records"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectSysFirerecordVo">
+        select record_id, fire_id, device_name, device_model, locate, point_check, check_records, create_by, create_time, update_by, update_time from sys_firerecord
+    </sql>
+
+    <select id="selectSysFirerecordList" parameterType="SysFirerecord" resultMap="SysFirerecordResult">
+        <include refid="selectSysFirerecordVo"/>
+        <where>
+            <if test="fireId != null "> and fire_id = #{fireId}</if>
+            <if test="deviceName != null  and deviceName != ''"> and device_name like concat('%', #{deviceName}, '%')</if>
+            <if test="deviceModel != null  and deviceModel != ''"> and device_model = #{deviceModel}</if>
+            <if test="locate != null  and locate != ''"> and locate = #{locate}</if>
+            <if test="pointCheck != null  and pointCheck != ''"> and point_check like concat('%', #{pointCheck}, '%')</if>
+            <if test="checkRecords != null  and checkRecords != ''"> and check_records = #{checkRecords}</if>
+        </where>
+        order by check_records desc
+    </select>
+    
+    <select id="selectSysFirerecordByRecordId" parameterType="Long" resultMap="SysFirerecordResult">
+        <include refid="selectSysFirerecordVo"/>
+        where record_id = #{recordId}
+    </select>
+
+    <insert id="insertSysFirerecord" parameterType="SysFirerecord">
+        insert into sys_firerecord
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+
+            <if test="fireId != null">fire_id,</if>
+            <if test="deviceName != null">device_name,</if>
+            <if test="deviceModel != null">device_model,</if>
+            <if test="locate != null">locate,</if>
+            <if test="pointCheck != null">point_check,</if>
+            <if test="checkRecords != null">check_records,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+
+            <if test="fireId != null">#{fireId},</if>
+            <if test="deviceName != null">#{deviceName},</if>
+            <if test="deviceModel != null">#{deviceModel},</if>
+            <if test="locate != null">#{locate},</if>
+            <if test="pointCheck != null">#{pointCheck},</if>
+            <if test="checkRecords != null">#{checkRecords},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateSysFirerecord" parameterType="SysFirerecord">
+        update sys_firerecord
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="fireId != null">fire_id = #{fireId},</if>
+            <if test="deviceName != null">device_name = #{deviceName},</if>
+            <if test="deviceModel != null">device_model = #{deviceModel},</if>
+            <if test="locate != null">locate = #{locate},</if>
+            <if test="pointCheck != null">point_check = #{pointCheck},</if>
+            <if test="checkRecords != null">check_records = #{checkRecords},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where record_id = #{recordId}
+    </update>
+
+    <delete id="deleteSysFirerecordByRecordId" parameterType="Long">
+        delete from sys_firerecord where record_id = #{recordId}
+    </delete>
+
+    <delete id="deleteSysFirerecordByRecordIds" parameterType="String">
+        delete from sys_firerecord where record_id in 
+        <foreach item="recordId" collection="array" open="(" separator="," close=")">
+            #{recordId}
+        </foreach>
+    </delete>
+
+    <insert id="uni" parameterType="String">
+        update sys_firefighting
+        set image = #{image},check_records = #{currentDateString}
+        where qr_content = #{qrContent}
+    </insert>
+</mapper>
