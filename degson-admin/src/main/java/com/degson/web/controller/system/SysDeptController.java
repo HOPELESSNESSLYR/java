@@ -22,6 +22,7 @@ import com.degson.common.enums.BusinessType;
 import com.degson.common.utils.StringUtils;
 import com.degson.system.service.ISysDeptService;
 
+
 /**
  * 部门信息
  * 

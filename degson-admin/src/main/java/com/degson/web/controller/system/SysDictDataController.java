@@ -30,6 +30,7 @@ import com.degson.system.service.ISysDictTypeService;
  * 
  * @author degson
  */
+
 @RestController
 @RequestMapping("/system/dict/data")
 public class SysDictDataController extends BaseController

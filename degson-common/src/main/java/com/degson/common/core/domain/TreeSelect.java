@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.degson.common.core.domain.entity.SysDept;
 import com.degson.common.core.domain.entity.SysMenu;
 
+
 /**
  * Treeselect树结构实体类
  * 

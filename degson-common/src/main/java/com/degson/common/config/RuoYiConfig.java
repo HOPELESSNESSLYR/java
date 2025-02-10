@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
  * 
  * @author degson
  */
+
 @Component
 @ConfigurationProperties(prefix = "degson")
 public class RuoYiConfig

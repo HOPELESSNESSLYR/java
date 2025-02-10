@@ -1,5 +1,6 @@
 package com.degson.common.constant;
 
+
 /**
  * 任务调度通用常量
  * 

@@ -1,5 +1,6 @@
 package com.degson.common.constant;
 
+
 /**
  * 返回状态码
  * 

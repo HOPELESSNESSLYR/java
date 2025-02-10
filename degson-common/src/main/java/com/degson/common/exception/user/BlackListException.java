@@ -1,5 +1,6 @@
 package com.degson.common.exception.user;
 
+
 /**
  * 黑名单IP异常类
  * 

@@ -1,5 +1,6 @@
 package com.degson.common.exception;
 
+
 /**
  * 全局异常
  * 

@@ -1,5 +1,6 @@
 package com.degson.common.exception;
 
+
 /**
  * 业务异常
  * 

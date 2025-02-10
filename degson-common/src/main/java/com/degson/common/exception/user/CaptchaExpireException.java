@@ -1,5 +1,6 @@
 package com.degson.common.exception.user;
 
+
 /**
  * 验证码失效异常类
  * 

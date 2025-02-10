@@ -11,6 +11,7 @@ import com.degson.common.utils.StringUtils;
 import com.degson.framework.web.service.SysRegisterService;
 import com.degson.system.service.ISysConfigService;
 
+
 /**
  * 注册验证
  * 

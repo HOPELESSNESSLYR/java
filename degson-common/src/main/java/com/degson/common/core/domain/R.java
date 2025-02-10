@@ -3,6 +3,7 @@ package com.degson.common.core.domain;
 import java.io.Serializable;
 import com.degson.common.constant.HttpStatus;
 
+
 /**
  * 响应信息主体
  *

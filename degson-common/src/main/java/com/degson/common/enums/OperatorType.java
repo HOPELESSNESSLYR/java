@@ -1,5 +1,6 @@
 package com.degson.common.enums;
 
+
 /**
  * 操作人类别
  * 

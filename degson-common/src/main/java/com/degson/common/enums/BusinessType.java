@@ -1,5 +1,6 @@
 package com.degson.common.enums;
 
+
 /**
  * 业务操作类型
  * 

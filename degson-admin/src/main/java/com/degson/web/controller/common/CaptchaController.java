@@ -21,6 +21,7 @@ import com.degson.common.utils.uuid.IdUtils;
 import com.degson.system.service.ISysConfigService;
 
 /**
+ *
  * 验证码操作处理
  * 
  * @author degson

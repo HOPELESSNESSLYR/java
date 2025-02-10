@@ -15,6 +15,7 @@ import org.springframework.context.annotation.ComponentScan;
 @MapperScan("com.degson.system.mapper")
 //@ComponentScan(basePackages = {"com.degson.fire"})
 
+
 public class RuoYiApplication
 {
     public static void main(String[] args)

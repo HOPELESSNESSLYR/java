@@ -3,6 +3,7 @@ package com.degson.common.constant;
 import java.util.Locale;
 import io.jsonwebtoken.Claims;
 
+
 /**
  * 通用常量信息
  * 

@@ -1,5 +1,6 @@
 package com.degson.common.core.domain.model;
 
+
 /**
  * 用户注册对象
  * 

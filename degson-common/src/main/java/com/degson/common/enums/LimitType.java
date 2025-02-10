@@ -1,5 +1,6 @@
 package com.degson.common.enums;
 
+
 /**
  * 限流类型
  *

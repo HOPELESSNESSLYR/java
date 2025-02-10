@@ -28,6 +28,7 @@ import com.degson.system.service.ISysUserOnlineService;
  * 
  * @author degson
  */
+
 @RestController
 @RequestMapping("/monitor/online")
 public class SysUserOnlineController extends BaseController

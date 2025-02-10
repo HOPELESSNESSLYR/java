@@ -2,6 +2,7 @@ package com.degson.common.core.text;
 
 import com.degson.common.utils.StringUtils;
 
+
 /**
  * 字符串格式化
  * 

@@ -1,5 +1,6 @@
 package com.degson.common.exception;
 
+
 /**
  * 工具类异常
  * 

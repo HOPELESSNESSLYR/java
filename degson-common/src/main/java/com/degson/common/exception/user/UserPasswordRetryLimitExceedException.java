@@ -1,5 +1,6 @@
 package com.degson.common.exception.user;
 
+
 /**
  * 用户错误最大次数异常类
  * 

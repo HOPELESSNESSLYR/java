@@ -25,6 +25,7 @@ import com.degson.system.service.ISysLogininforService;
  * 
  * @author degson
  */
+
 @RestController
 @RequestMapping("/monitor/logininfor")
 public class SysLogininforController extends BaseController

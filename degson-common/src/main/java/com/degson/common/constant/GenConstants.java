@@ -1,5 +1,6 @@
 package com.degson.common.constant;
 
+
 /**
  * 代码生成通用常量
  * 

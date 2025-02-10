@@ -2,6 +2,7 @@ package com.degson.common.exception.file;
 
 import com.degson.common.exception.base.BaseException;
 
+
 /**
  * 文件信息异常类
  * 

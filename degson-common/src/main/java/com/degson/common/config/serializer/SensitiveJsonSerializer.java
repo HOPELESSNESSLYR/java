@@ -13,6 +13,7 @@ import com.degson.common.core.domain.model.LoginUser;
 import com.degson.common.enums.DesensitizedType;
 import com.degson.common.utils.SecurityUtils;
 
+
 /**
  * 数据脱敏序列化过滤
  *

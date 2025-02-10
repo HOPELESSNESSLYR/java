@@ -1,5 +1,6 @@
 package com.degson.common.exception.user;
 
+
 /**
  * 用户密码不正确或不符合规范异常类
  * 

@@ -27,6 +27,7 @@ import springfox.documentation.spring.web.plugins.Docket;
  * 
  * @author degson
  */
+
 @Configuration
 public class SwaggerConfig
 {

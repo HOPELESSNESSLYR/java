@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.degson.common.config.serializer.SensitiveJsonSerializer;
 import com.degson.common.enums.DesensitizedType;
 
+
 /**
  * 数据脱敏注解
  *

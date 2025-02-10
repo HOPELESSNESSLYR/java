@@ -27,6 +27,7 @@ import com.degson.system.service.ISysDictTypeService;
  * 
  * @author degson
  */
+
 @RestController
 @RequestMapping("/system/dict/type")
 public class SysDictTypeController extends BaseController

@@ -24,6 +24,7 @@ import com.degson.system.service.ISysOperLogService;
  * 
  * @author degson
  */
+
 @RestController
 @RequestMapping("/monitor/operlog")
 public class SysOperlogController extends BaseController

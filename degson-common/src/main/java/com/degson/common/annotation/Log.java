@@ -14,6 +14,7 @@ import com.degson.common.enums.OperatorType;
  * @author degson
  *
  */
+
 @Target({ ElementType.PARAMETER, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented

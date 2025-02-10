@@ -3,6 +3,7 @@ package com.degson.common.enums;
 import java.util.function.Function;
 import com.degson.common.utils.DesensitizedUtil;
 
+
 /**
  * 脱敏类型
  *

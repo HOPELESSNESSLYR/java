@@ -3,6 +3,7 @@ package com.degson.common.exception.base;
 import com.degson.common.utils.MessageUtils;
 import com.degson.common.utils.StringUtils;
 
+
 /**
  * 基础异常
  * 

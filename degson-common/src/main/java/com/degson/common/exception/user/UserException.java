@@ -2,6 +2,7 @@ package com.degson.common.exception.user;
 
 import com.degson.common.exception.base.BaseException;
 
+
 /**
  * 用户信息异常类
  * 

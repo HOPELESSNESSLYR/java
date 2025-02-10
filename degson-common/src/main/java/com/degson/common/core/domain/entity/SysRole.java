@@ -10,6 +10,7 @@ import com.degson.common.annotation.Excel;
 import com.degson.common.annotation.Excel.ColumnType;
 import com.degson.common.core.domain.BaseEntity;
 
+
 /**
  * 角色表 sys_role
  * 

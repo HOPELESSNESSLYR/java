@@ -1,5 +1,6 @@
 package com.degson.common.constant;
 
+
 /**
  * 用户常量信息
  * 

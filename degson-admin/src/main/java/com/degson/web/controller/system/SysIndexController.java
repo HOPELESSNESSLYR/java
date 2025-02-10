@@ -11,6 +11,7 @@ import com.degson.common.utils.StringUtils;
  *
  * @author degson
  */
+
 @RestController
 public class SysIndexController
 {
